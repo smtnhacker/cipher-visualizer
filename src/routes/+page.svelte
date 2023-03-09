@@ -1,5 +1,6 @@
 <script>
 	import Mapping from '$lib/components/Mapping.svelte';
+    import "./styles.css"
 
 	let input = '';
 	let mapping = {};
@@ -39,8 +40,8 @@
 	<h1>Cipher Visualizer</h1>
 	<div class="container">
 		<div class="left">
-			<textarea bind:value={input} name="cipher" cols="30" rows="10"></textarea>
-			<div>
+			<textarea bind:value={input} name="cipher" cols="100" rows="10"></textarea>
+			<div class="decoded">
 				{#each Array.from(cipher) as letter}
 					{#if letter === '\n'}
 						<br />
@@ -52,14 +53,40 @@
 				{/each}
 			</div>
 		</div>
-		<Mapping on:change={handleChange} />
+        <div>
+            <div class="sticky">
+                <Mapping on:change={handleChange} />
+            </div>
+        </div>
 	</div>
+    <footer>Made by Ron Mikhael Surara | Copyright 2023</footer>
 </section>
 
 <style>
+    h1 {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    textarea {
+        padding: 10px;
+    }
 	.container {
 		display: flex;
+        justify-content: center;
 	}
+    .decoded {
+        margin-top: 12px;
+        padding: 12px;
+        font-size: 1.2em;
+    }
+    .sticky {
+        position: sticky;
+        top: 100px;
+    }
+    footer {
+        text-align: center;
+        padding: 24px;
+    }
 </style>
 
 

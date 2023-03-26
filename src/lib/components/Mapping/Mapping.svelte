@@ -1,6 +1,6 @@
 <script>
     import { createEventDispatcher } from "svelte";
-    import MappingKey from "./MappingKey.svelte";
+    import MappingKey from "../MappingKey/MappingKey.svelte";
 
     const mapping = {};
     const dispatchEvent = createEventDispatcher();
@@ -27,6 +27,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        height: 60vh;
+        height: 90vh;
+        max-width: 90%;
     }
 </style>

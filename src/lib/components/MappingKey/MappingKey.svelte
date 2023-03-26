@@ -22,17 +22,36 @@
 <style>
     .mapping-key {
         display: flex;
-        margin-bottom: 4px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+    }
+
+    .mapping-key * {
+        box-sizing: border-box;
     }
 
     .plain-key {
-        width: 50px;
+        width: 3rem;
         text-align: center;
+        font-family: 'Carter One';
+        text-transform: capitalize;
+        font-size: 1rem;
+
+        color: var(--color-theme-2);
+
+        background-color: var(--color-black);
+        outline: none;
+        border: none;
     }
 
     .cipher-key {
         text-align: center;
         padding: 5px;
-        width: 20px;
+        width: 3rem;
+        font-family: 'Carter One';
+        font-size: 1rem;
+        
+        border: 5px solid var(--color-black);
+        outline: none;
     }
 </style>
